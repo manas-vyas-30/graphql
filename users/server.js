@@ -16,4 +16,4 @@ app.listen(4000, () => {
   console.log("Listening");
 });
 
-// http://localhost:4000/graphiql
+// http://localhost:4000/graphql
