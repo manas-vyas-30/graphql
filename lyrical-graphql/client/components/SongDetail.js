@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { graphql } from "react-apollo";
 import fetchSong from "../queries/fetchSong";
 import { Link } from "react-router";
+import LyricCreate from "./LyricCreate";
+import LyricList from "./LyricList";
 
 class SongDetail extends Component {
   render() {
@@ -12,13 +14,13 @@ class SongDetail extends Component {
     }
     return (
       <div>
-      <Link to="/">Back</Link>
-        <ul className="collection">
-          <li className="collection-item">
-            {song.title}
-            <i className="material-icons">okay</i>
-          </li>
-        </ul>
+        <Link to="/">Back</Link>
+        <h3>
+          {song.title}
+          <i className="material-icons">okay</i>
+        </h3>
+        <LyricList lyrics={song.lyrics} />
+        <LyricCreate songId={this.props.params.id} />
       </div>
     );
   }
